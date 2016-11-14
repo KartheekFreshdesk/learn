@@ -1,0 +1,40 @@
+Db
+
+DB as a Service.
+	Abstracting the work done by database.
+		But by different databases at once.
+
+	Single api call method name to different databases.
+References-
+http://www.w3resource.com/sql/creating-index/sql-creating-index.php
+	CHeck if the reference is good for languages or technology.
+
+
+INDEX
+	know the different index types and options
+
+Types of tables-
+http://www.c-sharpcorner.com/UploadFile/rohatash/creating-different-type-of-tables-in-sql-server-2012/
+
+Sequence
+
+Handling duplicates
+https://www.tutorialspoint.com/mysql/mysql-handling-duplicates.htm
+
+Sql injection - BEWARE
+
+Already an embedded importing and exporting of db is present.
+	CHECK with schema imports and exports.
+
+Paritioning vs database sharding.
+http://blog.freshdesk.com/how-freshdesk-scaled-part-one/
+
+
+HTML
+Code refactoring html - Google Search
+
+Sass
+Sass basics
+	http://sass-lang.com/guide
+http://sass-lang.com/styleguide
+https://webdesign.tutsplus.com/articles/quick-tip-name-your-sass-variables-modularly--webdesign-13364
