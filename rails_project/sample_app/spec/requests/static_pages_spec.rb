@@ -10,16 +10,17 @@ require 'spec_helper'
 #   end
 # end
 
-
+#5.3.4 GOOD RSPEC MODIFICATION.
 describe "Static pages" do
   describe "Home page" do
+    before { visit root_path }
     it "should have the content 'Sample App'" do
-      visit '/static_pages/home'
+      # visit '/static_pages/home'
       page.should have_content('Sample App')
     end
 
   	it "should have the right title" do
-  	  visit '/static_pages/home'
+  	  # visit '/static_pages/home'
   	  page.should have_title("Ruby")
   	  #Below are depricated functions.
   	end
