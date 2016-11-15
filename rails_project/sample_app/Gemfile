@@ -7,7 +7,7 @@ gem 'rails', '3.2.22.5'
 
 gem 'sqlite3'
 gem 'test-unit', '~> 3.0'
-gem 'capybara'
+
 
 group :development, :test do
   gem 'rspec-rails'
@@ -43,4 +43,9 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 group :production do
   gem 'pg', '0.12.2'
+end
+
+group :test do
+	gem 'capybara'
+	gem 'rb-fsevent', '0.9.1', :require => false
 end

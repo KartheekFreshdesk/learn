@@ -221,6 +221,7 @@ HASHES
 
 
 METHODS 
+	.empty? vs .blank?
 	
 	SPLAT arguments
 	def what_up(greeting, *bros)   
@@ -363,6 +364,7 @@ OOP
 	classes 
 		instance methods
 		class methods 	def self.bar
+		object.class.superclass
 
 
 	class << self mostly used as static method.  NEED TO DO
