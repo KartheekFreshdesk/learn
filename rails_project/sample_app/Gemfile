@@ -47,5 +47,8 @@ end
 
 group :test do
 	gem 'capybara'
+<<<<<<< HEAD
 	gem 'rb-fsevent', '0.9.1', :require => false
+=======
+>>>>>>> 18ce1416014211f1353ec6e43c48f3eab7fcc5fe
 end
