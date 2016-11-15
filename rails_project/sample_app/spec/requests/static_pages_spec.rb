@@ -18,18 +18,16 @@ describe "Static pages" do
       page.should have_content('Sample App')
     end
 
-	it "should have the right title" do
-	  visit '/static_pages/home'
-	  page.should have_title("Ruby on Rails Tutorial Sample App | Home")
-	  #Below are depricated functions.
-	end
-
+  	it "should have the right title" do
+  	  visit '/static_pages/home'
+  	  page.should have_title("Ruby")
+  	  #Below are depricated functions.
+  	end
   end
 
    describe "Help page" do
-
     it "should have the content 'Help'" do
-      visit '/static_pages/help'
+      visit help_path
       page.should have_content('Help')
     end
 
