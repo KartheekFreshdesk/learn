@@ -5,6 +5,7 @@ RVM
 	gemsets
 	https://rvm.io/gemsets/basics
 	Auto tab completion not working   DBT
+	rvm reinstall 1.9.3 --with-gcc=clang 	CHECK BEFORE INSTALL.
 	eg- rvm gemset list
 		rvm gemset list_all
 		rvm gemset create rails410 rails210
@@ -30,6 +31,7 @@ RVM
 
 
 RAILS 
+	We normally miss the tests -- which we feel is an additional thing.
 
 	
 	rails new first_app
@@ -43,9 +45,15 @@ RAILS
 	bundle install --without production
 
 	bundle exec rake db:migrate
+	bundle exec rake db:rollback
+	bundle exec rake db:test:prepare
 
 	rake traceroute   NEED TO KNOW 
 
+	NEED TO KNOW AND ADVANCE THE META DATA.---------------
+	necessity of annotate gem.  Adds the comments.
+
+	
 	NOTE
 	Scaffolding doesnt create the foreign keys for us.
 	Controller in CamelCase - as class takes CamelCase + Plural
@@ -63,6 +71,27 @@ RAILS
 	https://infinum.co/the-capsized-eight/articles/top-8-tools-for-ruby-on-rails-code-optimization-and-cleanup
 	purifycss
 	http://rails-bestpractices.com 		few only
+	http://www.rubular.com/				REGEX.
+
+	Models --
+	.new vs .create   Models
+	Model.find_by_<col_name>("..")
+
+	user = User.new()
+	user.save 
+	user.valid?
+	user.errors.full_messages
+	user_with_same_email.valid?
+
+	rails generate migration add_index_to_users_email
+	NEED TO KNOW MORE ON INDEXES. find by on interview questions.
+	ALso doesnt create the index syntax.
+
+	def change
+      reversible do |dir|
+      	change_table :products do |t|
+
+
 
 
 	FAQ
@@ -73,7 +102,8 @@ RAILS
 	rails generate controller StaticPages home help --no-test-framework 
 		with methods or actions home, help 
   	BDD vs TDD     Rspec vs cucumber
-
+  	http://rakeroutes.com/blog/increase-rails-performance-with-database-indexes/
+  	http://weblog.rubyonrails.org/2011/12/6/what-s-new-in-edge-rails-explain/
 
 	Deployment
 	https://www.phusionpassenger.com
