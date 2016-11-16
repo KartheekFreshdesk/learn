@@ -55,4 +55,6 @@ end
 group :test do
 	gem 'capybara'
 	gem 'rb-fsevent', '0.9.1', :require => false
+  gem 'factory_girl_rails', '4.1.0'
+
 end

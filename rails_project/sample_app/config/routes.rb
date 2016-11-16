@@ -1,8 +1,8 @@
 SampleApp::Application.routes.draw do
   
-
+  resources :users
   #use of get in below ?----------- DBT
-  get "users/new"
+  # get "users/new"
   match '/signup',  to: 'users#new'
 
   # get "static_pages/home"
