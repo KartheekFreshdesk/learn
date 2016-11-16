@@ -5,6 +5,7 @@ RVM
 	gemsets
 	https://rvm.io/gemsets/basics
 	Auto tab completion not working   DBT
+	rvm reinstall 1.9.3 --with-gcc=clang 	CHECK BEFORE INSTALL.
 	eg- rvm gemset list
 		rvm gemset list_all
 		rvm gemset create rails410 rails210
@@ -30,6 +31,10 @@ RVM
 
 
 RAILS 
+	FAQ
+	Rails in the server logs is generating huge logs. I need a precise one.
+	Also with routes and the http requests acquantaince.
+	We normally miss the tests -- which we feel is an additional thing.
 
 	
 	rails new first_app
@@ -43,9 +48,15 @@ RAILS
 	bundle install --without production
 
 	bundle exec rake db:migrate
+	bundle exec rake db:rollback
+	bundle exec rake db:test:prepare
 
 	rake traceroute   NEED TO KNOW 
 
+	NEED TO KNOW AND ADVANCE THE META DATA.---------------
+	necessity of annotate gem.  Adds the comments.
+
+	
 	NOTE
 	Scaffolding doesnt create the foreign keys for us.
 	Controller in CamelCase - as class takes CamelCase + Plural
@@ -63,6 +74,82 @@ RAILS
 	https://infinum.co/the-capsized-eight/articles/top-8-tools-for-ruby-on-rails-code-optimization-and-cleanup
 	purifycss
 	http://rails-bestpractices.com 		few only
+	http://www.rubular.com/				REGEX.
+
+	Models --
+	.new vs .create   Models
+	Model.find_by_<col_name>("..")
+
+	user = User.new()
+	user.save 
+	user.valid?
+	user.errors.full_messages
+	user_with_same_email.valid?
+
+	rails generate migration add_index_to_users_email
+	NEED TO KNOW MORE ON INDEXES. find by on interview questions.
+	ALso doesnt create the index syntax.
+
+	def change
+      reversible do |dir|
+      	change_table :products do |t|
+
+
+    rails generate migration AddPartNumberToProducts part_number:string:index
+    rails generate migration RemovePartNumberFromProducts part_number:string
+
+    passowrd CHECK
+    these virtual attributes are implemented automatically by has_secure_password
+
+    current_user = user.authenticate(password)
+    IMP section 6.3
+
+    source code for has_secure_password 
+    https://github.com/rails/rails/blob/master/activemodel/lib/active_model/secure_password.rb
+
+    if Rails.env.development?
+    useful in debugging env 
+    rails console test 	makes us into test env.
+    rails server --environment production
+
+    bundle exec rake db:migrate RAILS_ENV=production    IMP FOR production ONE.
+    
+    bundle exec rake db:reset
+    	bundle exec rake db:test:prepare
+
+    chapter 7 
+    localhost:3000/users/1 works not 1.json or 1.xml 
+    https://github.com/thoughtbot/factory_girl
+
+    NEED TO KNOW config/environment/..
+
+    http://en.gravatar.com/
+    http://automattic.com/
+
+    http://www.opinionatedprogrammer.com/2011/02/capybara-and-selenium-with-rspec-and-rails-3/
+    capybara and capybara-webkit
+    rspec vs capybara vs cucumber
+	visit signup_path 			capybara used in this syntax.
+	fill_in "Name", with: "Example User"
+	.
+	.
+	.
+	click_button "Create my account"
+
+	expect { click_button "Create my account" }.not_to change(User, :count)
+	CHECK
+
+	FORMS
+	The problem of including the javascript within form.
+	Firebug
+	
+	CHECK
+	include ActionView::Helpers::TextHelper
+	pluralize(2, "test")
+
+	Authenticity token - csrf token
+	http://stackoverflow.com/questions/941594/understanding-the-rails-authenticity-token
+
 
 
 	FAQ
@@ -73,7 +160,9 @@ RAILS
 	rails generate controller StaticPages home help --no-test-framework 
 		with methods or actions home, help 
   	BDD vs TDD     Rspec vs cucumber
-
+  	http://rakeroutes.com/blog/increase-rails-performance-with-database-indexes/
+  	http://weblog.rubyonrails.org/2011/12/6/what-s-new-in-edge-rails-explain/
+  	https://everydayrails.com/
 
 	Deployment
 	https://www.phusionpassenger.com

@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.22.5'
+gem 'bootstrap-sass', '2.1'
+gem 'bcrypt-ruby', '3.0.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
 gem 'test-unit', '~> 3.0'
+
 
 
 group :development, :test do
@@ -41,14 +44,17 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+group :development do
+  gem 'annotate', '2.5.0'
+end
+
 group :production do
   gem 'pg', '0.12.2'
 end
 
 group :test do
 	gem 'capybara'
-<<<<<<< HEAD
 	gem 'rb-fsevent', '0.9.1', :require => false
-=======
->>>>>>> 18ce1416014211f1353ec6e43c48f3eab7fcc5fe
+  gem 'factory_girl_rails', '4.1.0'
+
 end
