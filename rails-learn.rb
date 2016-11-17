@@ -36,6 +36,8 @@ RAILS
 	Also with routes and the http requests acquantaince.
 	We normally miss the tests -- which we feel is an additional thing.
 
+	table - gives info over conventions
+	http://rails-3-2.railstutorial.org/book/sign_up#table-RESTful_users
 	
 	rails new first_app
 	rails server
@@ -160,14 +162,32 @@ RAILS
 	rails generate controller StaticPages home help --no-test-framework 
 		with methods or actions home, help 
   	BDD vs TDD     Rspec vs cucumber
-  	http://rakeroutes.com/blog/increase-rails-performance-with-database-indexes/
+
+  		Why should the behaviour be function wise? Neither it should be revisitng and completing the actions repeatedly.
+  			Eg- a flow that has 2 branches should be able to take up to the merge point of both of them.
+  			REDUCTION OF REPETITION.	
+  			owtf
+	http://rakeroutes.com/blog/increase-rails-performance-with-database-indexes/
   	http://weblog.rubyonrails.org/2011/12/6/what-s-new-in-edge-rails-explain/
   	https://everydayrails.com/
+
 
 	Deployment
 	https://www.phusionpassenger.com
 
 
+
+	rails generate integration_test authentication_pages
+
+	before_save vs before_create in sessions... chapter 8
+
+	its(:remember_token) { should_not be_blank }
+	it { @user.remember_token.should_not be_blank } 
+
+	IMP IMP ....... NEED TO CHECK RESEARCH.BUT BEING AN API, IS IT HTML?
+	http://api.rubyonrails.org/v3.2.0/classes/ActiveRecord/Persistence.html#method-i-save
+
+	skipped the part of cucumber NEED TO CHECKß
 
 GIT
 	git config --global core.editor "subl -w"
