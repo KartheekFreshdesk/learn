@@ -189,6 +189,20 @@ RAILS
 
 	skipped the part of cucumber NEED TO CHECKß
 
+	REFERENCES
+	http://tutorials.jumpstartlab.com/topics/better_views/erb_and_haml.html
+	react rails...CHECK
+	react d3
+
+	attr_accessible - makes the attribute to be changed from request made by user.
+	Hence admin attribute is not included.
+
+	https://github.com/rails/strong_parameters
+	https://www.quora.com/Rails-4-strong-params-error-no-implicit-conversion-of-Symbol-into-String
+
+	CHECK
+	rspec for controllers or the integration_test related.
+
 GIT
 	git config --global core.editor "subl -w"
 	git config --global user.name "Your Name"

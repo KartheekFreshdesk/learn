@@ -1,0 +1,22 @@
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <!-- IMP -->
+  <!-- <% @users.each do |user| %> -->
+    <%= render @users %>
+  <!-- <% end %> -->
+</ul>
+
+<%= will_paginate %>
+
+
+
+
+<!-- 
+The view in Listing 9.33 doesn’t work yet, though, because currently @users contains the results of User.all (Listing 9.23), which is of class Array, whereas will_paginate expects an object of class ActiveRecord::Relation 
+User.all.class - Array
+User.paginate(page: 1).class - ActiveRecord::Relation
+-->
