@@ -31,6 +31,22 @@ RVM
 
 
 RAILS 
+	http://rails-refactoring.com/
+	refactoring to microservices.  rails and django.
+	EVEN DJANGO REFACTOR.django design patterns.
+
+	We forget the thing of extensions to application, guide for further resources, exercises or the last. 
+	But once check.
+
+	refactor controllers. refactoring rails. IMP 
+	naming convention rails controller
+	rails convention - singular vs plural 
+
+	http://rails-3-2.railstutorial.org/book/
+
+
+	manager vs controller java
+
 	FAQ
 	Rails in the server logs is generating huge logs. I need a precise one.
 	Also with routes and the http requests acquantaince.
@@ -210,9 +226,18 @@ RAILS
 	Check the mass assignment security error
 
 	faker CHECK IMP
-
 	config NEED TO READ. 
+	many to many relations sql (considering both self and non self)
+	http://stackoverflow.com/questions/18603372/how-to-make-sql-many-to-many-same-type-relationship-table
 
+	NEED TO CHECK properly. Followers chapter.
+
+	IMP difference between delete and post of listing 11.26
+
+	Testing the ajax requests is something diff and is done using xhr method.
+
+	All we need to do is respond to a normal HTTP request with a redirect
+	and respond to an Ajax request with JavaScript.	
 
 GIT
 	git config --global core.editor "subl -w"
