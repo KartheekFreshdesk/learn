@@ -203,6 +203,17 @@ RAILS
 	CHECK
 	rspec for controllers or the integration_test related.
 
+	Associations
+	belongs_to/has_many
+
+	Not Micropost.create, user.microposts.create
+	Check the mass assignment security error
+
+	faker CHECK IMP
+
+	config NEED TO READ. 
+
+
 GIT
 	git config --global core.editor "subl -w"
 	git config --global user.name "Your Name"
