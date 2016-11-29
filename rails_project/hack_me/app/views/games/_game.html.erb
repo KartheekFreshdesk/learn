@@ -1,0 +1,5 @@
+<ol class="games">
+	<%= will_paginate @games %>
+	<%= render partial: 'shared/game', :collection =>  @games%>
+	<%= will_paginate @games %>
+</ol>

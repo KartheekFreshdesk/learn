@@ -1,0 +1,25 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+  <div class="span8">
+    <h3> Games Played - status </h3>
+    <% if @user.games.any? %>
+        <%= render 'player_played_game_details/player_played_game_detail', :@game_details => @user.player_played_game_details %>
+    <% end %>
+  </div>  
+</div>
+
+
+<!-- NEED THE RELINKING TO THE GAME PLAYED PREVIEW.. -->
+
+<%= render partial: 'shared/user_and_score', collection: @users %>

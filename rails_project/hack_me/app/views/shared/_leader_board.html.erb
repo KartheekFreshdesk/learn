@@ -1,0 +1,7 @@
+<!-- NEED TO REFACTOR -->
+<% if games_played_exists %>
+	<ol class="leader_baord">
+	<%= render partial: 'shared/user_and_score', collection: @users %>
+	</ol>
+	<%= will_paginate @users %>
+<% end %>

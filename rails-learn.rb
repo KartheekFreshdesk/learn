@@ -38,14 +38,16 @@ RAILS
 	We forget the thing of extensions to application, guide for further resources, exercises or the last. 
 	But once check.
 
+	http://www.theodinproject.com/courses/ruby-on-rails/
+
 	refactor controllers. refactoring rails. IMP 
 	naming convention rails controller
 	rails convention - singular vs plural 
 
 	http://rails-3-2.railstutorial.org/book/
 
-
 	manager vs controller java
+	Prepared statements - imp 
 
 	FAQ
 	Rails in the server logs is generating huge logs. I need a precise one.
@@ -188,6 +190,19 @@ RAILS
   	https://everydayrails.com/
 
 
+  	TO drop table
+  	ActiveRecord::Migration.drop_table(:users)
+
+  	draper gem 
+  		Helper vs decorator vs partials. when to use which?
+
+  	Storing arrays into the models.
+
+  	real time - rail 5 
+  	https://blog.heroku.com/real_time_rails_implementing_websockets_in_rails_5_with_action_cable#step-3-action-cable-loves-redis	
+  	http://mikeatlas.github.io/realtime-rails/  This example works on without any signin.HOW?
+
+
 	Deployment
 	https://www.phusionpassenger.com
 
@@ -238,6 +253,11 @@ RAILS
 
 	All we need to do is respond to a normal HTTP request with a redirect
 	and respond to an Ajax request with JavaScript.	
+
+	WE DIDNT USE THE INHERITANCE PROPERTY FOR THE ADMIN AND NON ADMIN USERS.
+	
+	constructor rails 
+	db visualiser
 
 GIT
 	git config --global core.editor "subl -w"
