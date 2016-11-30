@@ -1,0 +1,17 @@
+
+1. The rabbitmq with redis (pub-sub)
+2. The socket.io, express/rails, redis (pub-sub)
+	http://liamkaufman.com/blog/2013/02/27/adding-real-time-to-a-restful-rails-app/
+
+	http://liamkaufman.com/blog/2012/02/25/adding_real-time_to_rails_with_socket.IO_nodejs_and_backbonejs_with_demo/
+
+
+	https://github.com/liamks/rails-realtime
+
+3. The meteor
+4. The rethink, rails, redis
+5. cloudboost.io realtime.
+
+
+Socket read - 
+https://openclassrooms.com/courses/ultra-fast-applications-using-node-js/socket-io-let-s-go-to-real-time
