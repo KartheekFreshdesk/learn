@@ -4,7 +4,3 @@ window.app.realtime =
 
     window.app.socket.on 'rt-change', (message) ->
       window.app.trigger 'books', message
-
-
-
-

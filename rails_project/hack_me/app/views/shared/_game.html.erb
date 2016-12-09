@@ -1,5 +1,7 @@
 <li id="<%= game.id %>">
 	<span class="game">
-		<%= link_to game.id, game  %>
+		<!-- TODO BUTTON -->
+		<p onclick="game_start(<%= game.id %>)"> <%= game.id %></p>
+		<!-- game_join function  -->
 	</span>
 </li>

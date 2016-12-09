@@ -11,28 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20161128105310) do
+ActiveRecord::Schema.define(:version => 20161207094859) do
 
   create_table "boards", :force => true do |t|
-    t.string   "squares",    :default => "'---\n- 0\n- 0\n- 0\n- 0\n- 0\n- 0\n- 0\n- 0\n- 0\n'"
-    t.datetime "created_at",                                                                     :null => false
-    t.datetime "updated_at",                                                                     :null => false
+    t.text     "squares"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "current_game_plays", :force => true do |t|
     t.integer  "game_id"
-    t.integer  "first_player_id"
-    t.integer  "second_player_id"
     t.integer  "board_id"
-    t.integer  "current_player_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.integer  "current_player", :default => 1
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "current_game_plays_users", :id => false, :force => true do |t|
+    t.integer "current_game_play_id"
+    t.integer "user_id"
   end
 
   create_table "games", :force => true do |t|
-    t.string   "state",      :limit => 5, :default => "0"
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
+    t.integer  "state",      :limit => 5, :default => 0
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
 
   create_table "games_users", :id => false, :force => true do |t|

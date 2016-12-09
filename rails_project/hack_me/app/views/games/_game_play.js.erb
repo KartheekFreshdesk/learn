@@ -1,0 +1,68 @@
+var socket = io.connect('http://localhost:8080/game');
+
+// Check if this can be turned to a current_game_play
+socket.on('connect', function(){
+	socket.emit('enter_room', <%= @game.id %>);
+});
+
+socket.on('ack_new_game', function(message){
+	alert(message);
+});
+
+socket.on('update_game', function(message){
+	alert(message);
+});
+
+
+// THE InitialBoard to be fetched from the db.
+<% if (@game.first_player?(current_user)) %> #current_user == @game.current_game_play.first_player) %>
+	player = 1;
+	var board = getInitialBoard("");
+	play_turn = 0;
+<% else %>
+	player = 2;
+	var board = getInitialBoard("");
+	play_turn = 0;
+	socket.emit('player_2_ready');
+<% end %>
+
+// Only one game player turn is initialised.
+socket.on('game_starts', function(){
+	alert('Game starts now');
+	play_turn = 1;
+});
+
+//TODO NEED .Logic check.
+var canvasMousePosition ;
+	canvas.addEventListener('mouseup', function (event) {
+		if (play_turn == 1){
+			var canvasMousePosition = getCanvasMousePosition(event);
+	  		addPlayingPiece(canvasMousePosition, player);
+	  		drawLines(10, lineColor);
+	  		play_turn = 0;
+	  	}
+	  	else{
+	  		alert('This is not your turn');
+	  	}
+	});
+
+	//SENDING TO DB FOR PERSISTENCE.
+	// NEED TO BE DONE.
+	$.ajax({
+    url: "/game_play/<%= @game.current_game_play.id %>/update",
+    // Need to get context of which box to be changed.
+    context: ,
+    success: function(){
+	      alert('board persistent data changed');
+	    }
+  	});
+
+	// SENDING TO OTHER SOCKET.
+	socket.emit('send_command', canvasMousePosition, player);
+	play_turn = 0;
+
+
+socket.on('update_board', function(mouse, player){
+	addPlayingPiece(mouse, player);
+	play_turn = 1;
+});

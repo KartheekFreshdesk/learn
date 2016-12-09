@@ -6,9 +6,17 @@
         <ul class="nav pull-right">
           <li><%= link_to "Home", root_path %></li>
           <% if signed_in? %>
-            <li class="button">
-              <a href="/games/new" class="btn btn-info" role="button">New Game</a>
-            </li>
+          <!-- Wrong placement of button li -->
+              <li class="button">
+                <%= link_to "New Game", new_game_path %>
+              </li>
+              <!--TODO NEED  TO CHANGE -->
+              <% if @game %>
+                <script>
+                  <%= render(partial: '/games/new_socket', formats: 'js') %>
+                </script>
+              <% end %>
+              
             <li><%= link_to "Profile", current_user %></li>
             <li><%= link_to "Settings", edit_user_path(current_user) %></li>
             <li class="divider"></li>

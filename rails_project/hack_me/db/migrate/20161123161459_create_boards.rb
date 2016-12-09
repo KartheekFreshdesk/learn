@@ -1,8 +1,7 @@
 class CreateBoards < ActiveRecord::Migration
   def change
     create_table :boards do |t|
-	  t.string :squares, array: true, default: [0]*9
-    		
+	  t.text :squares  #:default => [0, 0, 0, 0, 0, 0, 0, 0, 0].to_yaml
       t.timestamps
     end
   end

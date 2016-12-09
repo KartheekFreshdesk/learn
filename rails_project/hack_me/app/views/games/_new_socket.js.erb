@@ -1,0 +1,5 @@
+socket.emit('new_game', <%= @game.id %>);
+
+socket.on('ack_new_game', function(message){
+	alter(message);
+});

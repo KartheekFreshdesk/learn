@@ -36,6 +36,10 @@ Alternative way of doing or making it simple.
 
 	class method vs scope.. ReFACTORING.
 	
+	Adding the controller data to js.erb
+
+	Using of js on the conditions of the data sent from rails.
+	For eg - If game exists, only then a particular js has to be loaded.
 
 	MIGRATIONS - 
 	rake db:drop db:create db:migrate
@@ -48,6 +52,12 @@ Alternative way of doing or making it simple.
 	<!-- IMP -->
     <%= render partial: 'played_games/played_game', collection: @user.played_games || "There are no games played." %>
     CHECK THE CAUTION.
+
+    THE INCLUSION OF CSS AND JS FOR A SINGLE PAGE IN RAILS.
+
+    scope variables - 
+	http://www.wellho.net/mouth/2609_Scope-of-variables-important-to-Ruby-on-Rails.html
+
 
 	KNOWN_____
 	I have mistaken to interpret the situation of db design. Hence, started to make a game_player model.
@@ -93,13 +103,29 @@ Alternative way of doing or making it simple.
 
 	Check the sql query performances and query execution plan when query is given from rails.
 	http://stackoverflow.com/questions/1555471/what-tools-are-available-to-test-sql-statement-performance
+
+	<ol class="played_games">
+	<%= will_paginate @game_details %>
+		<% @games_details.each do |game_detail| %>
+			<li>
+				<span class="game_name">
+					<%= game_detail.game_id %>
+				</span>
+				<span class="score">
+					<%= game_detail.earned_points %>
+				</span>
+			</li>
+		<% end %>
+	<%= will_paginate @game_details %>
+	</ol>
 	
 
 	YET TO BE DONE -------
 	FILTERS.
 	PAGINATE FOR THE XML OR JSON RESPONSE.
 	CONSTANTS.
-
+	THE REFACTORING OF JS PAGES.
+	THE BROADCAST NOT WORKING IN HOME PAGE. I MEAN CHECK IF THE PLAYERS HAS BEEN ASSIGNED TO ROOM.
 
 	NEED THE RELINKING TO THE GAME PLAYED PREVIEW
 

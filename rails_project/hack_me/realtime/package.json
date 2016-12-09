@@ -1,0 +1,9 @@
+{
+  "name": "users_and_game",
+  "description": "Game - tic tac toe with a dashboard for players scores.",
+  "version": "0.0.1",
+  "dependencies": {
+    "redis": "^2.6.3",
+    "socket.io": ""
+  }
+}

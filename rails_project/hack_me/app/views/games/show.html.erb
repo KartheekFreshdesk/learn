@@ -1,0 +1,86 @@
+
+<!-- Where should this be placed? In current Game Play -->
+<%= stylesheet_link_tag 'tic_tac_toe.css' %>
+
+<div class="center-wrapper-parent">
+  <div class="canvas-wrapper">
+    <canvas id="tic-tac-toe-board" class="center-v"></canvas>
+  </div>
+</div>
+
+<script>
+// TODO
+var socket = io.connect('http://localhost:8080/game');
+
+// Check if this can be turned to a current_game_play
+socket.on('connect', function(){
+	socket.emit('enter_room', <%= @game.id %>);
+});
+
+socket.on('ack_new_game', function(message){
+	alert(message);
+});
+
+socket.on('update_game', function(message){
+	alert(message);
+});
+
+
+// The Initial Board to be fetched from the db.
+// TODO @game.first_player, second_player
+<% if (@game.first_player?(current_user)) %>
+	player = 1;
+	var board = getInitialBoard("");
+	play_turn = 0;
+<% else %>
+	player = 2;
+	var board = getInitialBoard("");
+	play_turn = 0;
+	socket.emit('player_2_ready');
+<% end %>
+
+// Only one game player turn is initialised.
+socket.on('game_starts', function(){
+	alert('Game starts now');
+	play_turn = 1;
+});
+
+//TODO NEED .Logic check.
+var canvasMousePosition ;
+	canvas.addEventListener('mouseup', function (event) {
+		if (play_turn == 1){
+			var canvasMousePosition = getCanvasMousePosition(event);
+	  		addPlayingPiece(canvasMousePosition, player);
+	  		drawLines(10, lineColor);
+	  		play_turn = 0;
+	  	}
+	  	else{
+	  		alert('This is not your turn');
+	  	}
+	});
+
+	//SENDING TO DB FOR PERSISTENCE.
+	// TODO.
+	$.ajax({
+    // url: "/current_game_play/<%= @game.current_game_play.id %>",
+    type: "PUT",
+    // TODO Context . Sending the Player and block .
+    // context: ,
+    success: function(){
+	      alert('board persistent data changed');
+	    }
+  	});
+
+	// SENDING TO OTHER SOCKET.
+	socket.emit('send_command', canvasMousePosition, player);
+	play_turn = 0;
+
+
+	socket.on('update_board', function(mouse, player){
+		addPlayingPiece(mouse, player);
+		play_turn = 1;
+	});
+
+</script>
+
+<%= javascript_include_tag 'tic_tac_toe' %>

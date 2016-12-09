@@ -13,8 +13,8 @@
   </aside>
   <div class="span8">
     <h3> Games Played - status </h3>
-    <% if @user.games.any? %>
-        <%= render 'player_played_game_details/player_played_game_detail', :@game_details => @user.player_played_game_details %>
+    <% if @user.player_played_game_details.any? %>
+      <%= render partial: 'player_played_game_details/player_played_game_detail', collection: @user.player_played_game_details %>
     <% end %>
   </div>  
 </div>
@@ -22,4 +22,4 @@
 
 <!-- NEED THE RELINKING TO THE GAME PLAYED PREVIEW.. -->
 
-<%= render partial: 'shared/user_and_score', collection: @users %>
+<%= render partial: 'shared/user_and_score', collection: @user %>

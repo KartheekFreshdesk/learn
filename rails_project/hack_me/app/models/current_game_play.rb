@@ -1,9 +1,9 @@
 class CurrentGamePlay < ActiveRecord::Base
+  #NEED TO KNOW WHICH TO BE INCLUDED.
   # attr_accessible :title, :body
 
-	belongs_to :game
-	belongs_to :current_player, class_name: "User"
-	belongs_to :first_player, class_name: "User"
-	belongs_to :second_player, class_name: "User"
-	belongs_to :board
+  belongs_to :game
+  belongs_to :board
+  has_and_belongs_to_many :users
+
 end
